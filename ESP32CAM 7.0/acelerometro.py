@@ -1,5 +1,5 @@
-import random
-import time
+# import random
+# import time
 
 #Librerias originales 
 #from machine import SoftI2C
@@ -24,7 +24,7 @@ async def detect_golpes(threshold=1000,test=True):
     count = test
     print(count)
     while count:
-        valsAcX, valsAcY, valsAcZ= get_values()#mpu.get_values()
+        valsAcX, valsAcY, valsAcZ= mpu.get_values()
         total_accel = abs(valsAcX) + abs(valsAcY) + abs(valsAcZ)
         print(total_accel)
         if total_accel > threshold:
@@ -94,7 +94,7 @@ async def detect_golpes(threshold=1000,test=True):
 
 
 
-# Función para generar valores de aceleración simulados en el rango [-1000, 1000]
-def get_values():
-    return random.randint(-1000, 1000),random.randint(-1000, 1000),random.randint(-1000, 1000)
+# # Función para generar valores de aceleración simulados en el rango [-1000, 1000]
+# def get_values():
+#     return random.randint(-1000, 1000),random.randint(-1000, 1000),random.randint(-1000, 1000)
 
